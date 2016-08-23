@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="World3D_GLSL_v2013_05" />
+		<Option pch_mode="2" />
+		<Option compiler="msvc10" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/World3D_GLSL_v2013_05" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="msvc10" />
+				<Compiler>
+					<Add option="/Zi" />
+					<Add option="/D_DEBUG" />
+					<Add directory="../MatOps/inc" />
+				</Compiler>
+				<Linker>
+					<Add option="/DEBUG" />
+					<Add library="opengl32.lib" />
+					<Add library="lib\glew32.lib" />
+					<Add library="..\MatOps\lib\Debug\MatOps.lib" />
+					<Add library="..\Test\lib\Debug\Test.lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="World3D_GLSL_v2013_05" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="msvc10" />
+				<Compiler>
+					<Add option="/Ox" />
+					<Add option="/DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="opengl32.lib" />
+					<Add library="lib\glew32.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="/W3" />
+		</Compiler>
+		<Unit filename="src/cpp/MeshBufferObject.cpp" />
+		<Unit filename="src/cpp/MeshBufferObject.h" />
+		<Unit filename="src/cpp/Renderer.cpp" />
+		<Unit filename="src/cpp/Renderer.h" />
+		<Unit filename="src/cpp/Shader.cpp" />
+		<Unit filename="src/cpp/Shader.h" />
+		<Unit filename="src/cpp/Teapot.cpp" />
+		<Unit filename="src/cpp/Teapot.h" />
+		<Unit filename="src/cpp/TeapotPatches.cpp" />
+		<Unit filename="src/cpp/TeapotPatches.h" />
+		<Unit filename="src/cpp/Vessel.cpp" />
+		<Unit filename="src/cpp/Vessel.h" />
+		<Unit filename="src/cpp/main.cpp" />
+		<Unit filename="src/cpp/main.h" />
+		<Unit filename="src/cpp/modelloader.cpp" />
+		<Unit filename="src/cpp/modelloader.h" />
+		<Unit filename="src/shader/ads_per_fragment.frag" />
+		<Unit filename="src/shader/ads_per_fragment_tex.frag" />
+		<Unit filename="src/shader/bezier.geo" />
+		<Unit filename="src/shader/bezier.tcs" />
+		<Unit filename="src/shader/bezier.tes" />
+		<Unit filename="src/shader/bezier.vert" />
+		<Unit filename="src/shader/curve.vert" />
+		<Unit filename="src/shader/diffuse_per_fragment.frag" />
+		<Unit filename="src/shader/diffuse_per_vertex.frag" />
+		<Unit filename="src/shader/fragmentshader.frag" />
+		<Unit filename="src/shader/generic.vert" />
+		<Unit filename="src/shader/geometryshader.geo" />
+		<Unit filename="src/shader/gradientnoise.geo" />
+		<Unit filename="src/shader/gradientnoise.vert" />
+		<Unit filename="src/shader/mesh_grid_ei.vert" />
+		<Unit filename="src/shader/mesh_grid_plane.vert" />
+		<Unit filename="src/shader/mesh_grid_sphere.vert" />
+		<Unit filename="src/shader/mesh_grid_wave.vert" />
+		<Unit filename="src/shader/mesh_perlin2d.vert" />
+		<Unit filename="src/shader/parametric_functions.vert" />
+		<Unit filename="src/shader/perlin1d.geo" />
+		<Unit filename="src/shader/perlin1d.vert" />
+		<Unit filename="src/shader/perlin2d.vert" />
+		<Unit filename="src/shader/perlinmod1d.geo" />
+		<Unit filename="src/shader/perlinmod2d.geo" />
+		<Unit filename="src/shader/quad_test.geo" />
+		<Unit filename="src/shader/rechteck.tcs" />
+		<Unit filename="src/shader/rechteck.tes" />
+		<Unit filename="src/shader/subdivision.geo" />
+		<Unit filename="src/shader/subdivision.vert" />
+		<Unit filename="src/shader/teapot.tcs" />
+		<Unit filename="src/shader/teapot.tes" />
+		<Unit filename="src/shader/teapot.vert" />
+		<Unit filename="src/shader/tess_test.tcs" />
+		<Unit filename="src/shader/tess_test.tes" />
+		<Unit filename="src/shader/tess_test.vert" />
+		<Unit filename="src/shader/test.frag" />
+		<Unit filename="src/shader/test.vert" />
+		<Unit filename="src/shader/texture.frag" />
+		<Unit filename="src/shader/vertexshader.vert" />
+		<Unit filename="src/shader/xmodel.tes" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

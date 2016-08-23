@@ -1,0 +1,36 @@
+//Tesselation Evaluation Shader
+
+uniform mat4 mProjection;
+uniform mat4 mView;
+uniform mat4 mModel;
+
+layout( isolines ) in;
+
+void bezier_spline(out float B[4], float t)
+{
+	float omt=1.0-t;
+	B[0]=omt*omt*omt;
+	B[1]=3.0*omt*omt*t;
+	B[2]=3.0*omt*t*t;
+	B[3]=t*t*t;
+}
+
+void main()
+{	
+	float B[4];	
+	vec2 P[4];
+	vec2 Pos;
+
+	float t = gl_TessCoord.x;
+
+	bezier_spline(B,t);
+	
+	P[0]=gl_in[0].gl_Position.xy;
+	P[1]=gl_in[1].gl_Position.xy;
+	P[2]=gl_in[2].gl_Position.xy;
+	P[3]=gl_in[3].gl_Position.xy;
+
+	Pos=B[0]*P[0]+B[1]*P[1]+B[2]*P[2]+B[3]*P[3];	
+
+	gl_Position = mProjection * mView * mModel * vec4(Pos,-2.0,1.0);		
+}

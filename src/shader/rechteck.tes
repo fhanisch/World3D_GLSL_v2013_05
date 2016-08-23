@@ -1,0 +1,31 @@
+//Tesselation Evaluation Shader
+
+uniform mat4 mProjection;
+uniform mat4 mView;
+uniform mat4 mModel;
+
+layout( quads ) in;
+
+out vec3 nTransform;
+out vec3 Position;
+out vec2 texCoord;
+
+void main()
+{
+	vec3 v0	 = gl_in[0].gl_Position.xyz;
+	vec3 v01 = gl_in[1].gl_Position.xyz - gl_in[0].gl_Position.xyz;
+	vec3 v02 = gl_in[2].gl_Position.xyz - gl_in[0].gl_Position.xyz;
+
+	float u = gl_TessCoord.x;
+	float v = gl_TessCoord.y;
+
+	vec3 vVertex = v0 + u*v01 + v*v02;
+
+	vec3 vNormal = -cross(v01,v02);
+
+	texCoord.x=4.0*gl_TessCoord.x;
+	texCoord.y=4.0*gl_TessCoord.y;
+	nTransform = transpose(inverse(mView*mModel))*vec4(vNormal,1.0);
+	Position = mView * mModel * vec4(vVertex,1.0);
+	gl_Position = mProjection * mView * mModel * vec4(vVertex,1.0);
+}

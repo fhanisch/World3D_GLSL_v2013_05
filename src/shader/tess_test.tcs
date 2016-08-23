@@ -1,0 +1,45 @@
+//Tesselation Control Shader
+
+uniform mat4 mView;
+uniform mat4 mModel;
+
+layout( vertices=6 ) out;
+
+in vec2 gradient[];
+in vec3 normal[];
+out vec2 grad[];
+out vec3 norm[];
+
+void main()
+{
+	float grid;
+
+	gl_out[gl_InvocationID].gl_Position = gl_in[gl_InvocationID].gl_Position;
+	grad[gl_InvocationID]=gradient[gl_InvocationID];
+	norm[gl_InvocationID]=normal[gl_InvocationID];
+	
+	if (gl_InvocationID==0) // wird nur beim ersten Durchlauf gesetzt
+	{	
+		vec4 p = mView*mModel*gl_in[gl_InvocationID].gl_Position;
+
+		//float depth = clamp( (abs(p.z)-2.0)/(20.0-2.0), 0.0, 1.0 );
+
+		//float grid = mix(20.0, 2.0, depth);
+
+		if (length(p.xyz)<40.0)
+		{
+			grid=20.0;
+		}
+		else
+		{
+			grid=2.0;
+		}
+		
+		gl_TessLevelOuter[0] = grid;
+		gl_TessLevelOuter[1] = grid;
+		gl_TessLevelOuter[2] = grid;
+		gl_TessLevelOuter[3] = grid;
+		gl_TessLevelInner[0] = grid;
+		gl_TessLevelInner[1] = grid;
+	}
+}

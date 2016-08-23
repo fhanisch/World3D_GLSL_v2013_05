@@ -1,0 +1,42 @@
+//Tesselation Evaluation Shader
+
+uniform mat4 mProjection;
+uniform mat4 mView;
+uniform mat4 mModel;
+uniform mat4 mModelView;
+
+layout( quads ) in;
+
+out vec3 nTransform;
+out vec3 Position;
+out vec2 texCoord;
+
+vec3 bilininterp3(float x, float y, vec3 f00, vec3 f10, vec3 f01, vec3 f11)
+{
+	return f00*(1.0-x)*(1.0-y)+f10*x*(1.0-y)+f01*(1.0-x)*y+f11*x*y;
+}
+
+void main()
+{
+	//für die richtige Orientierung der Fläche müssen hierfür die Vertices
+	//im Kreis angeordnet werden (im Uhrzeiger -oder Gegenuhrzeigersinn)!!!
+	vec3 v1	 = gl_in[1].gl_Position.xyz;
+	vec3 v10 = gl_in[0].gl_Position.xyz - gl_in[1].gl_Position.xyz;
+	vec3 v12 = gl_in[2].gl_Position.xyz - gl_in[1].gl_Position.xyz;
+
+	float u = gl_TessCoord.x;
+	float v = gl_TessCoord.y;
+
+	//zu den Parametern u und v müssen die richtigen Vertices zugeordnet werden
+	//die Vertices dürfen hierfür nicht im Kreis angeordnet werden!!!
+	//(Anordnung erfolgt Zeilenweise)
+	vec3 vVertex = bilininterp3(u,v,gl_in[0].gl_Position.xyz,gl_in[1].gl_Position.xyz,gl_in[3].gl_Position.xyz,gl_in[2].gl_Position.xyz);
+
+	vec3 vNormal = -cross(v10,v12);
+
+	texCoord.x=4.0*gl_TessCoord.x;
+	texCoord.y=4.0*gl_TessCoord.y;
+	nTransform = transpose(inverse(mModelView))*vec4(vNormal,1.0);
+	Position = mModelView * vec4(vVertex,1.0);
+	gl_Position = mProjection * mModelView * vec4(vVertex,1.0);
+}

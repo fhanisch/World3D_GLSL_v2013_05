@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1369056286 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\main.cpp
+	"main.h"
+	"Renderer.h"
+
+1369051578 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\main.h
+	<windows.h>
+	<stdio.h>
+	<io.h>
+	<time.h>
+	"..\..\inc\glew.h"
+	<gl\gl.h>
+	"modelloader.h"
+	<vector.h>
+	<matrix.h>
+	<mathfunc.h>
+
+1314281874 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\inc\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1367626963 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\modelloader.h
+	"main.h"
+
+1369061660 d:\entwicklung\projects\codeblocks\matops\inc\vector.h
+	<cmath>
+
+1369002729 d:\entwicklung\projects\codeblocks\matops\inc\matrix.h
+	<cmath>
+	"..\inc\vector.h"
+
+1369062941 d:\entwicklung\projects\codeblocks\matops\inc\mathfunc.h
+	"..\inc\vector.h"
+	"..\inc\matrix.h"
+
+1369051670 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\renderer.h
+	"main.h"
+	"MeshBufferObject.h"
+	"Teapot.h"
+	"TeapotPatches.h"
+	"Vessel.h"
+
+1368918145 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\meshbufferobject.h
+	"main.h"
+	"Shader.h"
+
+1367671850 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\shader.h
+	"main.h"
+
+1368902227 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\teapot.h
+	"main.h"
+	"MeshBufferObject.h"
+
+1367676736 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\teapotpatches.h
+	"main.h"
+	"MeshBufferObject.h"
+
+1369053080 d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\vessel.h
+	"MeshBufferObject.h"
+	"controlsystem.h"
+
+1368900420 d:\entwicklung\projects\codeblocks\matops\inc\controlsystem.h
+	<windows.h>
+
+1368966385 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\meshbufferobject.cpp
+	"MeshBufferObject.h"
+
+1367626882 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\modelloader.cpp
+	"modelloader.h"
+
+1369065774 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\renderer.cpp
+	"Renderer.h"
+
+1367691131 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\shader.cpp
+	"Shader.h"
+
+1368902854 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\teapot.cpp
+	"Teapot.h"
+
+1368802212 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\teapotpatches.cpp
+	"TeapotPatches.h"
+
+1369072016 source:d:\entwicklung\projects\codeblocks\world3d_glsl_v2013_05\src\cpp\vessel.cpp
+	"Vessel.h"
+
+1368969133 d:\entwicklung\projects\codeblocks\test\test.h
+
